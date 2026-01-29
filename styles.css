@@ -41,9 +41,12 @@ body {
     font-family: var(--font-mono);
     background: var(--bg-primary);
     color: var(--text-primary);
-    overflow: hidden;
-    height: 100vh;
-    position: relative;
+
+    /* FIX */
+    overflow-x: hidden;
+    overflow-y: auto;     /* allow scroll */
+    min-height: 100dvh;   /* dynamic viewport height (mobile safe) */
+    height: auto;
 }
 
 /* ============================================
@@ -150,32 +153,31 @@ body {
    ============================================ */
 
 #terminal-container {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;   /* instead of fixed */
+    margin: 1rem auto;
+
     width: 95%;
     max-width: 1400px;
-    height: 90vh;
+
+    height: auto;         /* let content decide */
+    min-height: 95dvh;    /* mobile safe */
+
+    display: flex;
+    flex-direction: column;
+
     background: rgba(18, 22, 48, 0.95);
     border: 2px solid var(--neon-cyan);
     border-radius: 12px;
-    box-shadow: 
+
+    box-shadow:
         var(--glow-cyan),
         0 0 60px rgba(0, 255, 249, 0.3),
         inset 0 0 60px rgba(0, 255, 249, 0.05);
-    display: flex;
-    flex-direction: column;
-    z-index: 10;
-    backdrop-filter: blur(10px);
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0.9);
-    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
 
-#terminal-container:not(.hidden) {
+    backdrop-filter: blur(10px);
+
     opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
+    transform: none;
 }
 
 .hidden {
@@ -262,6 +264,7 @@ body {
     flex: 1;
     padding: 1.5rem;
     overflow-y: auto;
+    min-height: 0; /* critical for flex scroll */
     font-size: 0.95rem;
     line-height: 1.6;
     scrollbar-width: thin;
@@ -667,63 +670,24 @@ body {
    ============================================ */
 
 @media (max-width: 768px) {
+
     #terminal-container {
         width: 100%;
-        height: 100vh;
+        min-height: 100dvh;
         border-radius: 0;
-        max-width: none;
+        margin: 0;
     }
 
-    .window-controls {
-        padding: 0.6rem 1rem;
-        flex-wrap: wrap;
-    }
-
-    .window-title {
-        font-size: 0.8rem;
-    }
-
-    .system-stats {
-        font-size: 0.75rem;
-    }
-
-    #terminal-output {
-        padding: 1rem;
-        font-size: 0.85rem;
-    }
-
-    .banner-art {
-        font-size: 0.45rem;
-    }
-
-    .section-title {
-        font-size: 1.1rem;
+    body {
+        padding-bottom: 70px; /* space for input bar */
     }
 
     .input-line {
-        padding: 0.8rem 1rem;
+        position: sticky;
+        bottom: 0;
+        z-index: 5;
     }
 
-    #terminal-input {
-        font-size: 0.85rem;
-    }
-
-    .contact-links {
-        flex-direction: column;
-    }
-
-    .info-grid {
-        grid-template-columns: 1fr;
-        gap: 0.3rem;
-    }
-
-    .project-card {
-        padding: 1rem;
-    }
-
-    .ascii-art {
-        font-size: 0.5rem;
-    }
 }
 
 @media (max-width: 480px) {

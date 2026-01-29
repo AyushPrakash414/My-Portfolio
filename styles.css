@@ -41,9 +41,8 @@ body {
     font-family: var(--font-mono);
     background: var(--bg-primary);
     color: var(--text-primary);
-    /* allow the page to scroll on mobile when virtual keyboard opens */
-    overflow: auto;
-    min-height: 100vh;
+    overflow: hidden;
+    height: 100vh;
     position: relative;
 }
 
@@ -262,8 +261,6 @@ body {
 #terminal-output {
     flex: 1;
     padding: 1.5rem;
-    /* ensure content can scroll above the input on mobile */
-    padding-bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px));
     overflow-y: auto;
     font-size: 0.95rem;
     line-height: 1.6;
@@ -548,8 +545,7 @@ body {
     color: var(--text-primary);
     font-family: var(--font-mono);
     font-size: 0.95rem;
-    /* show caret so typing is visible on mobile */
-    caret-color: var(--neon-cyan);
+    caret-color: transparent;
 }
 
 .cursor {
@@ -676,12 +672,6 @@ body {
         height: 100vh;
         border-radius: 0;
         max-width: none;
-        /* keep the container pinned to the viewport so keyboard doesn't cover input */
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        transform: none;
     }
 
     .window-controls {
@@ -711,10 +701,7 @@ body {
     }
 
     .input-line {
-        /* allow extra padding for mobile safe area & keyboard */
-        padding: calc(0.8rem + env(safe-area-inset-bottom, 0px)) 1rem  calc(0.8rem + env(safe-area-inset-bottom, 0px));
-        position: relative;
-        z-index: 20;
+        padding: 0.8rem 1rem;
     }
 
     #terminal-input {

@@ -1,0 +1,32 @@
+.nav {
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  min-height: calc(100dvh - 88px);
+  padding-top: 2.5rem;
+
+  .wrapper {
+    position: relative;
+    display: flex;
+    gap: 50px;
+    margin-bottom: 12px; // prev 80px
+    min-height: 100%;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .nav {
+    padding-top: 4rem;
+
+    .wrapper {
+      margin-bottom: 0px;
+      justify-content: space-between;
+    }
+  }
+}

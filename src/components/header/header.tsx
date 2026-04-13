@@ -24,14 +24,9 @@ const Header = ({ loader }: HeaderProps) => {
     <motion.header
       className={cn(
         styles.header,
+        isActive && styles.menuOpen,
         "transition-colors delay-100 duration-500 ease-in z-[1000]"
       )}
-      style={{
-        background: isActive ? "hsl(var(--background) / 0.96)" : "transparent",
-        backdropFilter: isActive ? "blur(18px)" : "none",
-        // backgroundImage:
-        //   "linear-gradient(0deg, rgba(0, 0, 0, 0), rgb(0, 0, 0))",
-      }}
       initial={{
         y: -80,
       }}

@@ -344,7 +344,7 @@ export const EXPERIENCE: Experience[] = [
     title: "Machine Learning Engineer Intern",
     company: "Codec Technologies",
     description: [
-      "Proposed demand forecasting and regression models for dynamic pricing of perishable products using Scikit-learn.",
+      "Proposed demand forecasting and regression models for dynamic WasteLess Commerce using Scikit-learn.",
       "Performed EDA, feature engineering, and time-series analysis on 10K+ records.",
       "Improved inventory optimization and reduced food wastage by 20%.",
     ],

@@ -3,8 +3,7 @@ import { Link } from "@/types";
 const links: Link[] = [
   {
     title: 'Home',
-    href: '/',
-    thumbnail: '/assets/nav-link-previews/landing.png'
+    href: '/'
   },
   {
     title: 'Skills',
@@ -13,13 +12,11 @@ const links: Link[] = [
   },
   {
     title: 'Experience',
-    href: '/#experience',
-    thumbnail: '/assets/nav-link-previews/about.png'
+    href: '/#experience'
   },
   {
     title: 'Projects',
-    href: '/#projects',
-    thumbnail: '/assets/nav-link-previews/projects.png'
+    href: '/#projects'
   },
   {
     title: 'Contact',

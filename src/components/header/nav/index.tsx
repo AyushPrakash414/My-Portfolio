@@ -22,6 +22,7 @@ const Index: React.FC<IndexProps> = ({ setIsActive }) => {
     isActive: false,
     index: 0,
   });
+  const activeThumbnail = links[selectedLink.index]?.thumbnail;
 
   return (
     <motion.div
@@ -41,7 +42,7 @@ const Index: React.FC<IndexProps> = ({ setIsActive }) => {
           />
         </div>
         <Image
-          src={links[selectedLink.index].thumbnail}
+          src={activeThumbnail}
           isActive={selectedLink.isActive}
         />
       </div>

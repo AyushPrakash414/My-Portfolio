@@ -73,7 +73,9 @@ export default function Body({
                 currentHref !== href ? "text-muted-foreground" : "underline"
               )}
               onClick={() => setIsActive(false)}
-              onMouseOver={() => setSelectedLink({ isActive: true, index })}
+              onMouseOver={() =>
+                setSelectedLink({ isActive: Boolean(link.thumbnail), index })
+              }
               onMouseLeave={() => setSelectedLink({ isActive: false, index })}
               variants={blur}
               animate={

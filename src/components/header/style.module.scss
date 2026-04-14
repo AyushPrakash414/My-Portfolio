@@ -8,12 +8,19 @@
   backdrop-filter: none;
 
   &.menuOpen {
-    background: hsl(var(--background) / 0.96);
-    backdrop-filter: blur(18px);
+    min-height: 100dvh;
+    background: hsl(var(--background) / 0.98);
+    backdrop-filter: blur(24px);
   }
 
   .background {
-    background: linear-gradient(to bottom, hsl(240 10% 3.9% / 0.85) 0%, hsl(240 10% 3.9% / 0.4) 60%, transparent 100%);
+    background: linear-gradient(
+      to bottom,
+      hsl(var(--background) / 0.99) 0%,
+      hsl(var(--background) / 0.97) 55%,
+      hsl(var(--background) / 0.94) 100%
+    );
+    backdrop-filter: blur(24px);
     height: 150%;
     width: 100%;
     position: absolute;

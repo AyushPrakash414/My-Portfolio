@@ -3,14 +3,17 @@ import { motion } from "motion/react";
 import Image from "next/image";
 import styles from "./style.module.scss";
 import { opacity } from "../../anim";
-import { cn } from "@/lib/utils";
 
 interface IndexProps {
-  src: string;
+  src?: string;
   isActive: boolean;
 }
 
 const Index: React.FC<IndexProps> = ({ src, isActive }) => {
+  if (!src) {
+    return null;
+  }
+
   return (
     <motion.div
       variants={opacity}
@@ -23,7 +26,7 @@ const Index: React.FC<IndexProps> = ({ src, isActive }) => {
         width={400}
         height={400}
         className="my-32 w-full h-auto object-cover"
-        alt={"Image"}
+        alt="Navigation preview"
         // priority={true}
       />
     </motion.div>

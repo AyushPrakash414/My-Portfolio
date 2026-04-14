@@ -31,12 +31,7 @@ const HeroSection = () => {
       />
       <div className="grid md:grid-cols-2">
         <div
-          className={cn(
-            "h-[calc(100dvh-3rem)] md:h-[calc(100dvh-4rem)] z-[10]",
-            "col-span-1",
-            "flex flex-col justify-start lg:justify-center items-center md:items-start",
-            "pt-44 sm:pt-40 sm:pb-16 md:p-20 md:pt-36 lg:p-24 xl:p-28"
-          )}
+          className="h-[calc(100dvh-3rem)] md:h-[calc(100dvh-4rem)] z-[10] col-span-1 flex flex-col justify-start lg:justify-center items-center md:items-start pt-24 sm:pt-40 sm:pb-16 md:px-20 md:pt-36 lg:px-24 xl:px-28"
         >
           {!isLoading && (
             <div className="flex flex-col">

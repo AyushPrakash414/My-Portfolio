@@ -70,7 +70,9 @@ const ExperienceCard = ({
               </div>
             </div>
             <Badge variant="secondary" className="w-fit font-mono text-xs font-normal">
-              {experience.startDate} - {experience.endDate}
+              {experience.startDate === experience.endDate
+                ? experience.startDate
+                : `${experience.startDate} - ${experience.endDate}`}
             </Badge>
           </div>
         </CardHeader>

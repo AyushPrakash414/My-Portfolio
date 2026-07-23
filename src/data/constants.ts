@@ -339,20 +339,37 @@ export type Experience = {
 export const EXPERIENCE: Experience[] = [
   {
     id: 1,
-    startDate: "Aug 2025",
-    endDate: "Sep 2025",
-    title: "Machine Learning Engineer Intern",
-    company: "Codec Technologies",
+    startDate: "Jan 2026",
+    endDate: "Present",
+    title: "Backend Developer Intern",
+    company: "Outlook Publishing Pvt. Ltd.",
     description: [
-      "Proposed demand forecasting and regression models for dynamic WasteLess Commerce using Scikit-learn.",
-      "Performed EDA, feature engineering, and time-series analysis on 10K+ records.",
-      "Improved inventory optimization and reduced food wastage by 20%.",
+      "Developed and maintained backend services and REST APIs for Outlook's digital magazine platform, enabling users to access, browse, and consume online magazine content with reliable and scalable performance.",
+      "Optimized database queries, content delivery workflows, and API performance while collaborating with cross-functional teams to support subscription management, user engagement features, and high-volume reader traffic.",
     ],
     skills: [
-      SkillNames.PYTHON,
-      SkillNames.TENSORFLOW,
-      SkillNames.MONGODB,
+      SkillNames.NODEJS,
+      SkillNames.EXPRESS,
+      SkillNames.POSTGRES,
+      SkillNames.MYSQL,
       SkillNames.GIT,
+    ],
+  },
+  {
+    id: 2,
+    startDate: "2026",
+    endDate: "2026",
+    title: "Open Source Contributor",
+    company: "Eclipse Foundation",
+    description: [
+      "Designed and implemented a Quick Export feature for Thing Description (TD) affordances (actions, properties, events) in the eclipse-editor IoT platform, enabling single-click export and reducing manual steps in IoT workflow configuration – PR #181.",
+      "Improved export process speed by 50%, enhancing productivity for 1,000+ developers and IoT professionals; delivered with zero user-reported issues post-release via Git workflows, pull requests, and code reviews.",
+    ],
+    skills: [
+      SkillNames.TS,
+      SkillNames.JS,
+      SkillNames.GIT,
+      SkillNames.GITHUB,
     ],
   },
 ];

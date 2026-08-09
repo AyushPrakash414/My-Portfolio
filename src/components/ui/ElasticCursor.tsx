@@ -123,7 +123,7 @@ function ElasticCursor() {
       set.r(0);
     }
 
-    if (isHidden) {
+    if (isHidden || !cursorMoved) {
       set.opacity?.(0);
     } else {
       set.opacity?.(1);

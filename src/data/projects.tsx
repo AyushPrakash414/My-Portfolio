@@ -24,6 +24,7 @@ import {
   SiOpencv,
   SiKeras,
   SiNumpy,
+  SiFastapi,
 } from "react-icons/si";
 import { TbBrandFramerMotion } from "react-icons/tb";
 import { FaJava } from "react-icons/fa";
@@ -194,6 +195,12 @@ const PROJECT_SKILLS = {
     fg: "white",
     icon: <SiNumpy />,
   },
+  fastapi: {
+    title: "FastAPI",
+    bg: "black",
+    fg: "white",
+    icon: <SiFastapi />,
+  },
 };
 
 export type Project = {
@@ -209,6 +216,67 @@ export type Project = {
 };
 
 const projects: Project[] = [
+  {
+    id: "self-healing-rag-pipeline",
+    category: "AI / RAG / Full Stack",
+    title: "Self-Healing RAG Pipeline",
+    src: "/assets/projects-screenshots/rag-pipeline/landing.png",
+    screenshots: [],
+    skills: {
+      frontend: [
+        PROJECT_SKILLS.react,
+        PROJECT_SKILLS.ts,
+        PROJECT_SKILLS.tailwind,
+      ],
+      backend: [
+        PROJECT_SKILLS.python,
+        PROJECT_SKILLS.fastapi,
+        PROJECT_SKILLS.java,
+        PROJECT_SKILLS.springBoot,
+        PROJECT_SKILLS.mongo,
+        PROJECT_SKILLS.docker,
+      ],
+    },
+    live: "https://ayushprakashrag.netlify.app/",
+    github: "https://github.com/AyushPrakash414",
+    get content() {
+      return (
+        <div>
+          <TypographyP className="font-mono text-2xl text-center">
+            🤖 Self-Healing RAG Pipeline
+          </TypographyP>
+          <TypographyP className="font-mono">
+            Architected a 3-stage self-healing retrieval pipeline with escalating strategies (k=4 ➔ 8 ➔ 12), automatic query rewriting, and critic-based answer grounding validation to eliminate silent RAG failures on large PDF corpora.
+          </TypographyP>
+          <ProjectsLinks live={this.live} repo={this.github} />
+
+          <TypographyH3 className="my-4 mt-8">Key Architecture & Highlights</TypographyH3>
+          <ul className="list-disc ml-6 font-mono space-y-2">
+            <li>
+              ⚡ <strong>3-Stage Self-Healing Retrieval</strong> — Escalating strategies (k=4 ➔ 8 ➔ 12), automatic query rewriting, and critic-based answer grounding validation to eliminate silent RAG failures on large PDF corpora.
+            </li>
+            <li>
+              🛡️ <strong>FastAPI & Spring Boot Microservices</strong> — Built Python FastAPI microservice with async/await for concurrent users and Java 21 Spring Boot API gateway featuring Google OAuth2, JWT security, MongoDB user management, and conversational history tracking.
+            </li>
+            <li>
+              🌐 <strong>React & TypeScript Frontend</strong> — Engineered React TypeScript frontend with document upload and RAG interaction UI.
+            </li>
+            <li>
+              🐳 <strong>Production Monorepo & Docker Orchestration</strong> — Delivered production-ready monorepo with Docker Compose orchestration, 3-attempt retry logic with progressive retrieval expansion, full JSON trace logging with confidence scores and source citations, and plug-and-play LLM/vector store abstraction (Groq ↔ Qdrant ↔ Pinecone ↔ ChromaDB).
+            </li>
+          </ul>
+
+          <TypographyH3 className="my-4 mt-8">Tech Stack</TypographyH3>
+          <ul className="list-disc ml-6 font-mono space-y-1">
+            <li><strong>AI & Vector DB:</strong> Groq AI, Qdrant Vector Store, Pinecone, ChromaDB</li>
+            <li><strong>Microservices & Gateway:</strong> Python, FastAPI, Java 21, Spring Boot, Google OAuth2, JWT</li>
+            <li><strong>Frontend & UI:</strong> React, TypeScript, Tailwind CSS</li>
+            <li><strong>Database & DevOps:</strong> MongoDB, Docker Compose</li>
+          </ul>
+        </div>
+      );
+    },
+  },
   {
     id: "gan-video-enhancement",
     category: "Deep Learning",

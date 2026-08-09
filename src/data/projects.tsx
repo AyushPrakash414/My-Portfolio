@@ -215,6 +215,7 @@ export type Project = {
   live?: string;
 };
 
+// RAG Pipeline Project Added
 const projects: Project[] = [
   {
     id: "self-healing-rag-pipeline",

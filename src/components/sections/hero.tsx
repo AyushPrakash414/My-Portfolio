@@ -92,10 +92,27 @@ const HeroSection = () => {
               </div>
               <div className="mt-8 flex flex-col gap-3 w-fit">
                 <div className="flex flex-col sm:flex-row gap-3">
-                  <Link
+                  <a
                     href="/assets/resume/Ayush_Prakash_Tiwari_Resume.pdf"
                     target="_blank"
+                    rel="noopener noreferrer"
                     className="flex-1"
+                    onClick={() => {
+                      // 1. Instant optimistic update
+                      window.dispatchEvent(new CustomEvent('resume-viewed-increment'));
+
+                      // 2. Persist in Redis
+                      fetch('/api/resume-views', { method: 'POST' })
+                        .then((res) => res.json())
+                        .then((data) => {
+                          if (data && typeof data.views === 'number') {
+                            window.dispatchEvent(
+                              new CustomEvent('resume-viewed', { detail: { views: data.views } })
+                            );
+                          }
+                        })
+                        .catch(console.error);
+                    }}
                   >
                     <BoxReveal delay={2} width="100%">
                       <Button className="flex items-center gap-2 w-full">
@@ -103,11 +120,27 @@ const HeroSection = () => {
                         <p>View Resume</p>
                       </Button>
                     </BoxReveal>
-                  </Link>
+                  </a>
                   <a
                     href="/resume/resume.pdf"
                     download="Ayush_Prakash_Tiwari_Resume.pdf"
                     className="flex-1"
+                    onClick={() => {
+                      // 1. Instant optimistic update
+                      window.dispatchEvent(new CustomEvent('resume-viewed-increment'));
+
+                      // 2. Persist in Redis
+                      fetch('/api/resume-views', { method: 'POST' })
+                        .then((res) => res.json())
+                        .then((data) => {
+                          if (data && typeof data.views === 'number') {
+                            window.dispatchEvent(
+                              new CustomEvent('resume-viewed', { detail: { views: data.views } })
+                            );
+                          }
+                        })
+                        .catch(console.error);
+                    }}
                   >
                     <BoxReveal delay={2.2} width="100%">
                       <Button variant="outline" className="flex items-center gap-2 w-full">

@@ -93,7 +93,7 @@ const HeroSection = () => {
               <div className="mt-8 flex flex-col gap-3 w-fit">
                 <div className="flex flex-col sm:flex-row gap-3">
                   <a
-                    href="/assets/resume/Ayush_Prakash_Tiwari_Resume.pdf"
+                    href={config.resumeUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex-1"
@@ -122,7 +122,7 @@ const HeroSection = () => {
                     </BoxReveal>
                   </a>
                   <a
-                    href="/assets/resume/Ayush_Prakash_Tiwari_Resume.pdf"
+                    href={config.resumeUrl}
                     download="Ayush_Prakash_Tiwari_Resume.pdf"
                     className="flex-1"
                     onClick={() => {

@@ -33,6 +33,7 @@ const config = {
   get ogImg() {
     return this.site + "/assets/seo/og-image.png";
   },
+  resumeUrl: "/assets/resume/Ayush_Prakash_Tiwari_Resume.pdf?v=2",
   social: {
     twitter: "https://x.com/iammrprakash29",
     linkedin: "https://www.linkedin.com/in/ayush-prakash-tiwari-5281b2286/",

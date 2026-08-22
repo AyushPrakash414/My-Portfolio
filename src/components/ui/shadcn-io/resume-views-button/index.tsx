@@ -3,6 +3,7 @@
 import { Eye, FileText } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { cn } from '@/lib/utils';
+import { config } from '@/data/config';
 import { SlidingNumber } from '../sliding-number';
 import { Fragment, useCallback, useEffect, useMemo, useState } from 'react';
 
@@ -117,7 +118,7 @@ export function ResumeViewsButton({ className, onClick }: ResumeViewsButtonProps
 
   return (
     <motion.a
-      href="/assets/resume/Ayush_Prakash_Tiwari_Resume.pdf"
+      href={config.resumeUrl}
       target="_blank"
       rel="noopener noreferrer"
       whileTap={{ scale: 0.95 }}

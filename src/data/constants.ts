@@ -339,19 +339,19 @@ export type Experience = {
 export const EXPERIENCE: Experience[] = [
   {
     id: 1,
-    startDate: "Jan 2026",
-    endDate: "July 2026",
+    startDate: "April 2026",
+    endDate: "Aug 2026",
     title: "Backend Developer Intern",
-    company: "Outlook Publishing Pvt. Ltd.",
+    company: "Assembly",
     description: [
-      "Developed and maintained backend services and REST APIs for Outlook's digital magazine platform, enabling users to access, browse, and consume online magazine content with reliable and scalable performance.",
-      "Optimized database queries, content delivery workflows, and API performance while collaborating with cross-functional teams to support subscription management, user engagement features, and high-volume reader traffic.",
+      "Architected and implemented robust backend modules and RESTful APIs for script breakdown and production report automation, reliably processing 100+ complex scene breakdowns with real-time dashboard synchronization.",
+      "Designed and deployed intelligent scheduling algorithms to optimize cast, crew, and filming location utilization, eliminating scheduling bottlenecks and improving operational efficiency by 40%.",
     ],
     skills: [
       SkillNames.NODEJS,
       SkillNames.EXPRESS,
       SkillNames.POSTGRES,
-      SkillNames.MYSQL,
+      SkillNames.REDIS,
       SkillNames.GIT,
     ],
   },

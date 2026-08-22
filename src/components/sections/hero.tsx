@@ -122,7 +122,7 @@ const HeroSection = () => {
                     </BoxReveal>
                   </a>
                   <a
-                    href="/resume/resume.pdf"
+                    href="/assets/resume/Ayush_Prakash_Tiwari_Resume.pdf"
                     download="Ayush_Prakash_Tiwari_Resume.pdf"
                     className="flex-1"
                     onClick={() => {
